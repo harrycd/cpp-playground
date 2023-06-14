@@ -16,7 +16,6 @@
 
 using namespace std;
 
-
 /// @brief keeps all tag related information plus utility functions
 class Tag
 {
@@ -34,7 +33,6 @@ public:
         this->name = tagName;
     }
 
-
     /// @brief inserts a new attribute to the attributes map
     /// @param name attribute name
     /// @param value attribute value
@@ -42,7 +40,6 @@ public:
     {
         attributes.insert(pair<string, string>(name, value));
     }
-
 
     /// @brief retrieves the value for the specified attribute
     /// @param attrName name of the attribute to retrieve the value from
@@ -57,7 +54,6 @@ public:
         return result;
     }
 
-
     /// @brief prints all attributes of the Tag (for debugging purposes)
     void showAttributes()
     {
@@ -65,7 +61,6 @@ public:
             cout << "\t" << attr.first << " = " << attr.second << endl;
     }
 };
-
 
 /// @brief
 /// @param tagPool
@@ -86,7 +81,6 @@ Tag getTag(vector<Tag> &tagPool, int tagId)
     return Tag(0, 0, "NULL");
 }
 
-
 /// @brief prints the names of the Tags and their corresponding attributes
 /// It is used for debugging purposes
 ///
@@ -105,7 +99,6 @@ void printTagPool(vector<Tag> tagPool)
         t.showAttributes();
     }
 }
-
 
 /// @brief Returns the a tag from the provided tag pool which has
 /// the specified parent and name
@@ -130,7 +123,7 @@ Tag getTag(vector<Tag> &tagPool, Tag parentTag, string tagName)
 }
 
 /// @brief finds the vector index in pointing to the Tag with the specified tag id
-/// @param tagPool a vector containing tags 
+/// @param tagPool a vector containing tags
 /// @param tagId the id of the tag whose index should be returned
 /// @return the index of the tag in the pool. If not found the 0 is returned
 int getTagPoolIndex(vector<Tag> tagPool, int tagId)
